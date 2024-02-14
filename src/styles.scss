@@ -1,0 +1,157 @@
+$btnFontSize: 24px;
+$contentFontSize: 20px;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    margin: 48px 96px;
+    text-align: center;
+}
+
+.header {
+    font-size: 48px;
+    text-transform: uppercase lowercase;
+    padding: 24px;
+}
+
+.task-content {
+    font-size: $contentFontSize;
+    padding: 24px 0;
+
+    .task {
+        list-style-type: none;
+
+        .task-list {
+            text-align: left;
+            border: 1px solid;
+            border-radius: 20px;
+            margin: 12px 0px;
+            padding: 12px 12px 12px 48px;
+        }
+    
+        .task-list-edit {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            text-align: left;
+            border: 1px solid;
+            border-radius: 20px;
+            margin: 12px 0px;
+            padding: 12px 12px 12px 48px;
+            list-style-type: none;
+        }
+    }
+}
+
+@mixin common-btn-styles {
+    font-size: $btnFontSize;
+    padding: 16px 32px;
+    border-radius: 50px;
+    border: 0;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        filter: drop-shadow(0 0 0.5rem rgb(155, 155, 155));
+    }
+}
+
+.modal-container, .modal-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.modal-overlay {
+    position: absolute;
+    background: rgba(49,49,49,0.8);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+}
+
+.default-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 24px 0px;
+
+    .create-btn, .edit-btn {
+        @include common-btn-styles;
+    }
+
+}
+
+.create-dial {    
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: fit-content;
+    padding: 18px;
+    background-color: #fff;
+    border: 0;
+    animation: fadeInOut 0.5s ease-in-out forwards;
+
+    .dial-wrapper {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 36px;
+
+        .new-task {
+            font-size: $contentFontSize;
+            padding: 10px 20px;
+            width: 75%;
+            border: 2px solid;
+            border-radius: 10px;
+            cursor: text;
+        }
+
+        .new-task:empty::before {
+            content: attr(placeholder)
+        }
+    
+        .add-to-list-btn {
+            @include common-btn-styles;
+        }
+    
+        .close-btn {
+            @include common-btn-styles;
+            margin-left: auto;
+        }
+
+    }
+
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+

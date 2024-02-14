@@ -1,0 +1,146 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  margin: 48px 96px;
+  text-align: center;
+}
+
+.header {
+  font-size: 48px;
+  text-transform: uppercase lowercase;
+  padding: 24px;
+}
+
+.task-content {
+  font-size: 20px;
+  padding: 24px 0;
+}
+.task-content .task {
+  list-style-type: none;
+}
+.task-content .task .task-list {
+  text-align: left;
+  border: 1px solid;
+  border-radius: 20px;
+  margin: 12px 0px;
+  padding: 12px 12px 12px 48px;
+}
+.task-content .task .task-list-edit {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  text-align: left;
+  border: 1px solid;
+  border-radius: 20px;
+  margin: 12px 0px;
+  padding: 12px 12px 12px 48px;
+  list-style-type: none;
+}
+
+.modal-container, .modal-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-overlay {
+  position: absolute;
+  background: rgba(49, 49, 49, 0.8);
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+}
+
+.default-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 24px 0px;
+}
+.default-btn .create-btn, .default-btn .edit-btn {
+  font-size: 24px;
+  padding: 16px 32px;
+  border-radius: 50px;
+  border: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.default-btn .create-btn:hover, .default-btn .edit-btn:hover {
+  filter: drop-shadow(0 0 0.5rem rgb(155, 155, 155));
+}
+
+.create-dial {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 18px;
+  background-color: #fff;
+  border: 0;
+  animation: fadeInOut 0.5s ease-in-out forwards;
+}
+.create-dial .dial-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+.create-dial .dial-wrapper .new-task {
+  font-size: 20px;
+  padding: 10px 20px;
+  width: 75%;
+  border: 2px solid;
+  border-radius: 10px;
+  cursor: text;
+}
+.create-dial .dial-wrapper .new-task:empty::before {
+  content: attr(placeholder);
+}
+.create-dial .dial-wrapper .add-to-list-btn {
+  font-size: 24px;
+  padding: 16px 32px;
+  border-radius: 50px;
+  border: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.create-dial .dial-wrapper .add-to-list-btn:hover {
+  filter: drop-shadow(0 0 0.5rem rgb(155, 155, 155));
+}
+.create-dial .dial-wrapper .close-btn {
+  font-size: 24px;
+  padding: 16px 32px;
+  border-radius: 50px;
+  border: 0;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-left: auto;
+}
+.create-dial .dial-wrapper .close-btn:hover {
+  filter: drop-shadow(0 0 0.5rem rgb(155, 155, 155));
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=styles.css.map */
