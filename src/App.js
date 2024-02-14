@@ -20,7 +20,10 @@ function App() {
 	};
 
 	const handleDeleteButton = () => {
+		setEditing(!editing);
+
 		// Filter out the selected tasks
+
 		const updatedTasks = tasks.filter(
 			(task) => !selectedTask.includes(task)
 		);

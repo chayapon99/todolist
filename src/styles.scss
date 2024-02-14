@@ -95,6 +95,10 @@ body {
 
 }
 
+.delete-btn {
+    @include common-btn-styles;
+}
+
 .create-dial {    
 
     position: absolute;

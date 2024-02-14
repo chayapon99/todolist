@@ -1,3 +1,5 @@
+import DeleteTask from "./DeleteTask";
+
 function EditTask({
 	onEditClick,
 	tasks,
@@ -13,17 +15,18 @@ function EditTask({
 			return "Edit";
 		} else if (selectedTask.length === 0) {
 			return "Close";
-		} else if (editing && selectedTask.length !== 0) {
-			handleDelete();
-			return "Delete";
 		}
 	};
 
 	return (
 		<>
-			<button className="edit-btn" onClick={onEditClick}>
-				{getEditButtonText()}
-			</button>
+			{
+				selectedTask.length === 0 ? 
+				<button className="edit-btn" onClick={onEditClick}>
+					{getEditButtonText()}
+					</button> 
+				: <DeleteTask handleDelete={handleDelete} selectedTask={selectedTask}/>
+			}
 		</>
 	);
 }

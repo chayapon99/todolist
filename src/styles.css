@@ -82,6 +82,18 @@ body {
   filter: drop-shadow(0 0 0.5rem rgb(155, 155, 155));
 }
 
+.delete-btn {
+  font-size: 24px;
+  padding: 16px 32px;
+  border-radius: 50px;
+  border: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.delete-btn:hover {
+  filter: drop-shadow(0 0 0.5rem rgb(155, 155, 155));
+}
+
 .create-dial {
   position: absolute;
   left: 50%;

@@ -19,7 +19,7 @@ function TaskList({ onEdit, tasks, selectedTask, setSelectedTask, setTasks }) {
 				tasks.map((task) => (
 					<>
 						<div className="task-list-container">
-							<li key={task} className={"task"}>
+							<li key={task.id} className={"task"}>
 								{/* <p>{task.id}</p> */}
 								{!onEdit ? (
 									<ul className="task-list">{task}</ul>
